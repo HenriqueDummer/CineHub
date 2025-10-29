@@ -1,9 +1,10 @@
+import { Route, Routes } from "react-router"
 
 function App() {
   return (
-    <>
-      <h1>CineHub</h1>
-    </>
+    <Routes>
+      
+    </Routes>
   )
 }
 
