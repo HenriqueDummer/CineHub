@@ -1,4 +1,5 @@
-import Navbar from "../Components/Navbar";
+import Carousel from "../Components/Carousel";
+import HeaderCarousel from "../Components/HeaderCarousel";
 
 const dummyData = [
     {
@@ -409,7 +410,9 @@ const headerData = dummyData.slice(0, 5);
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <HeaderCarousel data={headerData} />
+
+      <Carousel data={dummyData} />
     </div>
   )
 }
