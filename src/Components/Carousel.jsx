@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const PosterCarousel = ({ data }) => {
+const PosterCarousel = ({ data, title }) => {
   const carouselRef = useRef(null);
 
   const scrollLeft = () => {
@@ -14,7 +14,7 @@ const PosterCarousel = ({ data }) => {
   return (
     <section className="relative w-full overflow-hidden py-5">
       <h2 className="text-2xl font-bold text-white mb-3 ml-4">
-        Popular Movies
+        {title}
       </h2>
 
       <div className="relative flex items-center">
