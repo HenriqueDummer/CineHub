@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import Carousel from "../Components/Carousel";
-import HeaderCarousel from "../Components/HeaderCarousel";
+import Carousel from "../../Components/Carousel";
+import HeaderCarousel from "../../Components/HeaderCarousel";
 import { fetchMovieGenres, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies } from "../utils/api";
 
 const Home = () => {
