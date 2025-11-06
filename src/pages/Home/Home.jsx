@@ -1,5 +1,5 @@
-import Carousel from "../Components/Carousel";
-import HeaderCarousel from "../Components/HeaderCarousel";
+import Carousel from "../../Components/Carousel";
+import HeaderCarousel from "../../Components/HeaderCarousel";
 
 const dummyData = [
     {
