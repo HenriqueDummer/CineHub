@@ -4,7 +4,7 @@ import FilterSearch from '../../Components/FilterSearch'
 
 const Search = () => {
   return (
-    <div style={{marginTop: "100px"}}>
+    <div>
       <InputSearch />
 
       <FilterSearch />
