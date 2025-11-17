@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router";
 
 const PosterCarousel = ({ data, title }) => {
   const carouselRef = useRef(null);
@@ -18,7 +19,6 @@ const PosterCarousel = ({ data, title }) => {
       </h2>
 
       <div className="relative flex items-center">
-        {/* Left Button */}
         <button
           onClick={scrollLeft}
           className="absolute left-2 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2"
@@ -26,13 +26,13 @@ const PosterCarousel = ({ data, title }) => {
           ❮
         </button>
 
-        {/* Posters container */}
         <div
           ref={carouselRef}
           className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar px-12"
         >
           {data.map((movie) => (
-            <div
+            <Link
+              to={`/details/${movie.id}`}
               key={movie.id}
               className="shrink-0 w-[150px] hover:scale-105 transition-transform duration-300"
             >
@@ -41,11 +41,10 @@ const PosterCarousel = ({ data, title }) => {
                 alt={movie.title}
                 className="rounded-xl w-[1220px] aspect-2/3 object-cover shadow-lg"
               />
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Right Button */}
         <button
           onClick={scrollRight}
           className="absolute right-2 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2"

@@ -39,7 +39,6 @@ const Home = () => {
       <Carousel title="Trending" data={trendingMovies} />
       <Carousel title="Popular" data={popularMovies} />
       <Carousel title="Top rated" data={topRatedMovies} />
-
     </>
   )
 }
