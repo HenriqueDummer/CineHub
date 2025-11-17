@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import Carousel from "../Components/Carousel";
-import HeaderCarousel from "../Components/HeaderCarousel";
-import { fetchMovieGenres, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies } from "../utils/api";
+import Carousel from "../../Components/Carousel";
+import HeaderCarousel from "../../Components/HeaderCarousel";
+import { fetchMovieGenres, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies } from "../../utils/api";
 
 const Home = () => {
   // Fetch trending movies for header
@@ -39,7 +39,6 @@ const Home = () => {
       <Carousel title="Trending" data={trendingMovies} />
       <Carousel title="Popular" data={popularMovies} />
       <Carousel title="Top rated" data={topRatedMovies} />
-
     </>
   )
 }
