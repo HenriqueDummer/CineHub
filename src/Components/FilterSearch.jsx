@@ -3,7 +3,7 @@ import "./FilterSearch.css";
 
 const FilterSearch = () => {
   return (
-    <div className="flex flex-nowrap mt-8 ml-80 gap-10"> 
+    <div className="nav"> 
       <div className="text-secondary-text text-secondary-text text-1xl hover:text-[#516DFF] font-medium h-10 w-20 cursor-pointer">
         Horror
       </div>
