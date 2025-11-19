@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import Home from "./pages/Home/Home";
-import Catalog from "./Components/Catalog";
+import Catalog from "./pages/Catalog/Catalog";
 import Search from "./pages/Search/Search";
 import Details from "./pages/Details";
 import RootLayout from "./pages/RootLayout";

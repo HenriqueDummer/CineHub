@@ -37,6 +37,11 @@ export const fetchMovieGenres = async () => {
   return data.genres;
 };
 
+export const fetchMoviesByGenre = async (genreId) => {
+  if (!genreId) return [];
+  const data = await fetchFromTMDB(`/discover/movie?with_genres=${genreId}&sort_by=popularity.desc&page=1`);
+  return data.results;
+};
 export const fetchMovieByQuery = async (query) => {
   const data = await fetchFromTMDB(`/search/movie?include_adult=false&query=${query}&language=en-US&page=1`);
   return data.results;
