@@ -42,22 +42,37 @@ export const fetchMovieByQuery = async (query) => {
   return data.results;
 };
 
-export const fetchShowDetails = async (mediaType, id) => {
-  const data = await fetchFromTMDB(`/${mediaType}/${id}`);
-  return data;
+export const fetchTrendingSeries = async () => {
+  const data = await fetchFromTMDB('/trending/tv/week');
+  return data.results;
 };
 
-export const fetchShowCredits = async (mediaType, id) => {
-  const data = await fetchFromTMDB(`/${mediaType}/${id}/credits`);
-  return data;
+// Séries populares
+export const fetchPopularSeries = async () => {
+  const data = await fetchFromTMDB('/tv/popular');
+  return data.results;
 };
 
-export const fetchSimilarShows = async (mediaType, id) => {
-  const data = await fetchFromTMDB(`/${mediaType}/${id}/similar`);
-  return data;
+// Séries top rated
+export const fetchTopRatedSeries = async () => {
+  const data = await fetchFromTMDB('/tv/top_rated');
+  return data.results;
 };
 
-export const fetchShowVideos = async (mediaType, id) => {
-  const data = await fetchFromTMDB(`/${mediaType}/${id}/videos`);
-  return data;
+// Gêneros de séries
+export const fetchSeriesGenres = async () => {
+  const data = await fetchFromTMDB('/genre/tv/list');
+  return data.genres;
+};
+
+export const fetchSeriesByGenre = async (genreId, page = 1) => {
+  if (!genreId) return [];
+  const data = await fetchFromTMDB(`/discover/tv?with_genres=${genreId}&sort_by=popularity.desc&page=${page}`);
+  return data.results;
+};
+
+export const fetchMoviesByGenre = async (genreId, page = 1) => {
+  if (!genreId) return [];
+  const data = await fetchFromTMDB(`/discover/movie?with_genres=${genreId}&sort_by=popularity.desc&page=${page}`);
+  return data.results;
 };
