@@ -70,3 +70,9 @@ export const fetchSeriesByGenre = async (genreId, page = 1) => {
   const data = await fetchFromTMDB(`/discover/tv?with_genres=${genreId}&sort_by=popularity.desc&page=${page}`);
   return data.results;
 };
+
+export const fetchMoviesByGenre = async (genreId, page = 1) => {
+  if (!genreId) return [];
+  const data = await fetchFromTMDB(`/discover/movie?with_genres=${genreId}&sort_by=popularity.desc&page=${page}`);
+  return data.results;
+};
