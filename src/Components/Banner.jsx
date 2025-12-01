@@ -1,4 +1,4 @@
-import DeadpoolImage from "../assets/reacher.png"; // ajuste o caminho
+import DeadpoolImage from "../assets/deadpool.jpg"; // ajuste o caminho
 
 const Banner = () => {
   return (
@@ -15,7 +15,7 @@ const Banner = () => {
       <div className="absolute top-1/3 left-[8%] max-w-[500px]">
         <h1 className="text-red-500 text-5xl font-bold">DEADPOOL</h1>
 
-        <p className="mt-4 text-base leading-relaxed">
+        <p className="mt-4 text-base leading-relaxed text-white">
           Wade Wilson é um ex-agente especial que passou a trabalhar como mercenário.
           Seu mundo é destruído quando um cientista maluco o tortura e o transforma
           em Deadpool, um experimento brutal que lhe dá poderes especiais de cura e
