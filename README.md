@@ -59,7 +59,7 @@ O desenvolvimento segue a metodologia **Scrum**, com sprints semanais que inclue
 1.  **Clone o repositório:**
     ```bash
     git clone git@github.com:HenriqueDummer/CineHub.git
-    cd nome-do-repo
+    cd CineHub
     ```
 
 2.  **Instale as dependências:**
