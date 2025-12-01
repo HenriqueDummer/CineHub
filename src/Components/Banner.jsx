@@ -8,7 +8,7 @@ const Banner = () => {
       <img 
         src={DeadpoolImage}
         alt="Deadpool"
-        className="w-full h-full object-cover opacity-80"
+        className="w-full h-[800px] object-cover opacity-80"
       />
 
       {/* Conteúdo */}

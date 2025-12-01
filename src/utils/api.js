@@ -42,3 +42,31 @@ export const fetchMovieByQuery = async (query) => {
   return data.results;
 };
 
+export const fetchTrendingSeries = async () => {
+  const data = await fetchFromTMDB('/trending/tv/week');
+  return data.results;
+};
+
+// Séries populares
+export const fetchPopularSeries = async () => {
+  const data = await fetchFromTMDB('/tv/popular');
+  return data.results;
+};
+
+// Séries top rated
+export const fetchTopRatedSeries = async () => {
+  const data = await fetchFromTMDB('/tv/top_rated');
+  return data.results;
+};
+
+// Gêneros de séries
+export const fetchSeriesGenres = async () => {
+  const data = await fetchFromTMDB('/genre/tv/list');
+  return data.genres;
+};
+
+export const fetchSeriesByGenre = async (genreId, page = 1) => {
+  if (!genreId) return [];
+  const data = await fetchFromTMDB(`/discover/tv?with_genres=${genreId}&sort_by=popularity.desc&page=${page}`);
+  return data.results;
+};
