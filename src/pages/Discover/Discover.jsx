@@ -13,7 +13,7 @@ import {
 } from "../../utils/api";
 import Carousel from "../../Components/Carousel";
 
-const Series = () => {
+const Discover = () => {
   const { data: genres, isLoading: loadingGenres } = useQuery({
     queryKey: ["seriesGenres"],
     queryFn: fetchSeriesGenres,
@@ -29,7 +29,7 @@ const Series = () => {
     queryFn: fetchPopularSeries,
   });
 
-const [selectedGenreId, setSelectedGenreId] = useState(null);
+  const [selectedGenreId, setSelectedGenreId] = useState(null);
 
 
   useEffect(() => {
@@ -75,8 +75,8 @@ const [selectedGenreId, setSelectedGenreId] = useState(null);
   });
 
 
-    if (  loadingGenres || loadingTrending || loadingPopular || loadingByGenre || 
-          loadingMovieGenres || loadingPopularMovies || loadingMoviesByGenre) {
+  if (loadingGenres || loadingTrending || loadingPopular || loadingByGenre ||
+    loadingMovieGenres || loadingPopularMovies || loadingMoviesByGenre) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
         <div className="text-white text-2xl">Loading...</div>
@@ -85,31 +85,30 @@ const [selectedGenreId, setSelectedGenreId] = useState(null);
   }
 
   return (
-  
-  <>
+
+    <>
       <Banner />
-       <div className="mt-24">
+      <div className="mt-24">
         <SelectFilter
           title={"SÉRIES"}
           genres={genres ?? []}
           selectedGenreId={selectedGenreId}
           onSelect={(id) => setSelectedGenreId(id)}
         />
+        <Carousel data={seriesByGenre ?? popularSeries ?? []} isMovie={false} />
 
-        <Carousel data={seriesByGenre ?? popularSeries ?? []} />
         <SelectFilter
           title={"FILMES"}
           genres={movieGenres ?? []}
           selectedGenreId={selectedMovieGenreId}
           onSelect={(id) => setSelectedMovieGenreId(id)}
         />
-
-        <Carousel data={moviesByGenre ?? popularMovies ?? []} />
+        <Carousel data={moviesByGenre ?? popularMovies ?? []} isMovie />
       </div>
-  </>
-  
-   
+    </>
+
+
   );
 };
 
-export default Series;
+export default Discover;

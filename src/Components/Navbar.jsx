@@ -6,8 +6,7 @@ const liStyle = "hover:text-white cursor-pointer duration-200";
 
 const links = [
   { name: "Home", path: "/" },
-  { name: "Movies", path: "/movies" },
-  { name: "Series", path: "/series" },
+  { name: "Discover", path: "/discover" },
   { name: "Search", path: "/search" },
 ];
 

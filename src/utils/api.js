@@ -17,6 +17,26 @@ const fetchFromTMDB = async (endpoint) => {
   return response.json();
 };
 
+export const fetchShowCredits = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/credits`);
+  return data;
+}
+
+export const fetchSimilarShows = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/similar`);
+  return data;
+}
+
+export const fetchShowVideos = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/videos`);
+  return data;
+}
+
+export const fetchShowDetails = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}`);
+  return data;
+}
+
 export const fetchTrendingMovies = async () => {
   const data = await fetchFromTMDB('/trending/movie/week?language=en-US&page=1');
   return data.results;

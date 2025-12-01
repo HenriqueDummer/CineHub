@@ -4,7 +4,7 @@ import Catalog from "./Components/Catalog";
 import Search from "./pages/Search/Search";
 import Details from "./pages/Details/Details"
 import RootLayout from "./pages/RootLayout";
-import Series from "./pages/Series/Series";
+import Series from "./pages/Discover/Discover";
 
 function App() {
   return (
@@ -13,17 +13,14 @@ function App() {
         {/* Home page */}
         <Route path="/" element={<Home />} />
 
-        {/* Movies page */}
-        <Route path="/movies" element={<Catalog />} />
-
         {/* Series page */}
-        <Route path="/series" element={<Series />} />
+        <Route path="/discover" element={<Series />} />
 
         {/* Search page */}
         <Route path="/search" element={<Search />} />
 
         {/* Series details page */}
-        <Route path="/tv_series/details/:id" element={<Details />} />
+        <Route path="/tv_series/details/:id" element={<Details />} isMovie={false} />
 
         {/* Move details page */}
         <Route path="/movie/details/:id" element={<Details isMovie />} />

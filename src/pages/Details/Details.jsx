@@ -6,11 +6,11 @@ import { IoPlay, IoClose } from 'react-icons/io5';
 import { BiMovie } from 'react-icons/bi';
 import { useState } from 'react';
 
-const Details = ({ isMovie = true }) => {
+const Details = ({ isMovie }) => {
   const { id } = useParams();
-  const mediaType = isMovie ? 'movie' : 'tv_series';
+  const mediaType = isMovie ? 'movie' : 'tv';
   const [showTrailer, setShowTrailer] = useState(false);
-
+  console.log(isMovie)
   // Fetch main details
   const { data: details, isLoading: detailsLoading } = useQuery({
     queryKey: [mediaType, id],
@@ -94,7 +94,7 @@ const Details = ({ isMovie = true }) => {
             <button className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors">
               <IoPlay /> Play
             </button>
-            <button 
+            <button
               onClick={handleWatchTrailer}
               disabled={!trailer}
               className="bg-white/10 cursor-pointer hover:bg-gray-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -110,11 +110,11 @@ const Details = ({ isMovie = true }) => {
 
       {/* Trailer Modal */}
       {showTrailer && trailer && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={() => setShowTrailer(false)}
         >
-          <div 
+          <div
             className="relative w-full max-w-5xl aspect-video"
             onClick={(e) => e.stopPropagation()}
           >

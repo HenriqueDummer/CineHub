@@ -36,9 +36,9 @@ const Home = () => {
   return (
     <>
       <HeaderCarousel data={headerData} />
-      <Carousel title="Trending" data={trendingMovies} />
-      <Carousel title="Popular" data={popularMovies} />
-      <Carousel title="Top rated" data={topRatedMovies} />
+      <Carousel title="Trending" data={trendingMovies} isMovie />
+      <Carousel title="Popular" data={popularMovies} isMovie/>
+      <Carousel title="Top rated" data={topRatedMovies} isMovie />
     </>
   )
 }
