@@ -38,14 +38,13 @@ const [selectedGenreId, setSelectedGenreId] = useState(null);
     }
   }, [genres, selectedGenreId]);
 
-  // séries filtradas pelo gênero selecionado
   const {
     data: seriesByGenre,
     isLoading: loadingByGenre,
   } = useQuery({
     queryKey: ["seriesByGenre", selectedGenreId],
     queryFn: () => fetchSeriesByGenre(selectedGenreId),
-    enabled: !!selectedGenreId, // só busca quando tiver gênero
+    enabled: !!selectedGenreId,
   });
 
   const { data: movieGenres, isLoading: loadingMovieGenres } = useQuery({
@@ -58,7 +57,6 @@ const [selectedGenreId, setSelectedGenreId] = useState(null);
     queryFn: fetchPopularMovies,
   });
 
-  // estado do gênero selecionado (movies)
   const [selectedMovieGenreId, setSelectedMovieGenreId] = useState(null);
 
   useEffect(() => {
@@ -89,8 +87,8 @@ const [selectedGenreId, setSelectedGenreId] = useState(null);
   return (
   
   <>
-          <Banner />
-               <div className="mt-24">
+      <Banner />
+       <div className="mt-24">
         <SelectFilter
           title={"SÉRIES"}
           genres={genres ?? []}
