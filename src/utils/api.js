@@ -9,16 +9,16 @@ const fetchFromTMDB = async (endpoint) => {
       'Content-Type': 'application/json',
     },
   });
-  
+
   if (!response.ok) {
     throw new Error(`Failed to fetch: ${endpoint}`);
   }
-  
+
   return response.json();
 };
 
 export const fetchTrendingMovies = async () => {
-  const data = await fetchFromTMDB('/trending/movie/week');
+  const data = await fetchFromTMDB('/trending/movie/week?language=en-US&page=1');
   return data.results;
 };
 

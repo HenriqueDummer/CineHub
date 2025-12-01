@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/Home/Home";
 import Catalog from "./Components/Catalog";
 import Search from "./pages/Search/Search";
-import Details from "./pages/Details";
+import Details from "./pages/Details/Details"
 import RootLayout from "./pages/RootLayout";
 import Series from "./pages/Series/Series";
 
@@ -22,8 +22,12 @@ function App() {
         {/* Search page */}
         <Route path="/search" element={<Search />} />
 
-        {/* Movie/Series details page */}
-        <Route path="/details/:id" element={<Details />} />
+        {/* Series details page */}
+        <Route path="/tv_series/details/:id" element={<Details />} />
+
+        {/* Move details page */}
+        <Route path="/movie/details/:id" element={<Details isMovie />} />
+
       </Route>
     </Routes>
   );
