@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router";
 
-const PosterCarousel = ({ data, title }) => {
+const PosterCarousel = ({ data, title, isMovie }) => {
   const carouselRef = useRef(null);
 
   const scrollLeft = () => {
@@ -12,6 +12,7 @@ const PosterCarousel = ({ data, title }) => {
     carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
+  console.log(data)
   return (
     <section className="relative w-full overflow-hidden py-5">
       <h2 className="text-2xl font-bold text-white mb-3 ml-4">
@@ -32,7 +33,7 @@ const PosterCarousel = ({ data, title }) => {
         >
           {data.map((movie) => (
             <Link
-              to={`/details/${movie.id}`}
+              to={`/${isMovie ? 'movie' : 'tv_series'}/details/${movie.id}`}
               key={movie.id}
               className="shrink-0 w-[150px] hover:scale-105 transition-transform duration-300"
             >

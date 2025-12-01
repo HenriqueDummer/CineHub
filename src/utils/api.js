@@ -9,16 +9,16 @@ const fetchFromTMDB = async (endpoint) => {
       'Content-Type': 'application/json',
     },
   });
-  
+
   if (!response.ok) {
     throw new Error(`Failed to fetch: ${endpoint}`);
   }
-  
+
   return response.json();
 };
 
 export const fetchTrendingMovies = async () => {
-  const data = await fetchFromTMDB('/trending/movie/week');
+  const data = await fetchFromTMDB('/trending/movie/week?language=en-US&page=1');
   return data.results;
 };
 
@@ -42,3 +42,22 @@ export const fetchMovieByQuery = async (query) => {
   return data.results;
 };
 
+export const fetchShowDetails = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}`);
+  return data;
+};
+
+export const fetchShowCredits = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/credits`);
+  return data;
+};
+
+export const fetchSimilarShows = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/similar`);
+  return data;
+};
+
+export const fetchShowVideos = async (mediaType, id) => {
+  const data = await fetchFromTMDB(`/${mediaType}/${id}/videos`);
+  return data;
+};
