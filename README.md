@@ -1,4 +1,4 @@
-# 🎬 Aplicativo Web de Streaming
+# 🎬 CineHub
 
 > Projeto desenvolvido para a disciplina de Engenharia de Software.
 
